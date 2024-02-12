@@ -55,9 +55,23 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="EnterWindows.xaml.cs">
+      <DependentUpon>EnterWindows.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GoodsOperationsWindow.xaml.cs">
+      <DependentUpon>GoodsOperationsWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="SelectiveWindow.xaml.cs">
       <DependentUpon>SelectiveWindow.xaml</DependentUpon>
     </Compile>
+    <Page Include="EnterWindows.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="GoodsOperationsWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

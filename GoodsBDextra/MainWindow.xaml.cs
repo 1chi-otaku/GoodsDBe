@@ -133,17 +133,39 @@ namespace GoodsBDextra
 
         private void MenuItemCreateNew_Click(object sender, RoutedEventArgs e)
         {
-            // TODO: Реализовать логику для "Create New Goods"
+
+            GoodsOperationsWindow create_goods = new GoodsOperationsWindow();
+            create_goods.ShowDialog();
         }
 
         private void MenuItemCreateNewType_Click(object sender, RoutedEventArgs e)
         {
-            // TODO: Реализовать логику для "Create New Type"
+            EnterWindows create_supplier = new EnterWindows("Good Type");
+            create_supplier.ShowDialog();
+
+            if (create_supplier.DialogResult == true)
+            {
+                CreateQuery("SELECT ID, Name FROM GoodType");
+            }
+            else if (create_supplier.DialogResult == false)
+            {
+                return;
+            }
         }
 
         private void MenuItemCreateNewSupplier_Click(object sender, RoutedEventArgs e)
         {
-            // TODO: Реализовать логику для "Create New Supplier"
+            EnterWindows create_supplier = new EnterWindows("Supplier");
+            create_supplier.ShowDialog();
+
+            if (create_supplier.DialogResult == true)
+            {
+                CreateQuery("SELECT ID, Name FROM Supplier");
+            }
+            else if (create_supplier.DialogResult == false)
+            {
+                return;
+            }
         }
 
         private void MenuItemUpdateGoods_Click(object sender, RoutedEventArgs e)

@@ -1,0 +1,19 @@
+﻿<Window x:Class="GoodsBDextra.EnterWindows"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GoodsBDextra"
+        mc:Ignorable="d"
+        Title="EnterWindows" Height="150" Width="300">
+    <Grid>
+        <StackPanel Margin="10">
+            <TextBlock x:Name="text" Text="Enter Name:" Margin="0,0,0,5"/>
+            <TextBox x:Name="txtName" Width="200" Margin="0,0,0,10"/>
+            <StackPanel Orientation="Horizontal">
+                <Button Content="ОК" Width="80" Margin="0,0,10,0" Click="OKButton_Click" IsDefault="True"/>
+                <Button Content="Cancel" Width="80" Click="CancelButton_Click" IsCancel="True"/>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>
