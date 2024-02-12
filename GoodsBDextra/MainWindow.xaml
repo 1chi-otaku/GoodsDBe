@@ -1,0 +1,49 @@
+﻿<Window x:Class="GoodsBDextra.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GoodsBDextra"
+        mc:Ignorable="d"
+        Title="GoodsDB" Height="450" Width="850">
+    <Grid>
+        <DataGrid x:Name="datagrid" BorderBrush="#FF7290AD" Background="#FFD0D0D0" Margin="0,23,0,0"/>
+
+        <Menu VerticalAlignment="Top">
+            <MenuItem Header="Show">
+                <MenuItem Header="Show All" Click="MenuItemShowAll_Click"/>
+                <MenuItem Header="Show All Types" Click="MenuItemShowTypes_Click"/>
+                <MenuItem Header="Show All Suppliers" Click="MenuItemShowSuppliers_Click"/>
+            </MenuItem>
+
+            <MenuItem Header="MinMax">
+                <MenuItem Header="Show Max Quantity Good" Click="MenuItemShowMaxQuantity_Click"/>
+                <MenuItem Header="Show Min Quantity Good" Click="MenuItemShowMinQuantity_Click"/>
+                <MenuItem Header="Show Max Price Good" Click="MenuItemShowMaxPrice_Click"/>
+                <MenuItem Header="Show Min Price Good" Click="MenuItemShowMinPrice_Click"/>
+                <MenuItem Header="Show The Oldest Good" Click="MenuItemShowTheOldest_Click"/>
+                <MenuItem Header="Show Goods Type Statistics" Click="MenuItemShowTypeStat_Click"/>
+            </MenuItem>
+
+            <MenuItem Header="Selective">
+                <MenuItem Header="Show Selected Type of Goods" Click="MenuItemShowSelectedType_Click"/>
+                <MenuItem Header="Show Selected Supplier Goods" Click="MenuItemShowSelectedSupplier_Click"/>
+            </MenuItem>
+
+            <MenuItem Header="CRUD">
+                <MenuItem Header="Create New Goods" Click="MenuItemCreateNew_Click"/>
+                <MenuItem Header="Create New Type" Click="MenuItemCreateNewType_Click"/>
+                <MenuItem Header="Create New Supplier" Click="MenuItemCreateNewSupplier_Click"/>
+                <MenuItem Header="Update Goods" Click="MenuItemUpdateGoods_Click"/>
+                <MenuItem Header="Update Type" Click="MenuItemUpdateType_Click"/>
+                <MenuItem Header="Update Supplier" Click="MenuItemUpdateSupplier_Click"/>
+                <MenuItem Header="Delete Goods" Click="MenuItemDeleteGoods_Click"/>
+                <MenuItem Header="Delete Type" Click="MenuItemDeleteType_Click"/>
+                <MenuItem Header="Delete Supplier" Click="MenuItemDeleteSupplier_Click"/>
+
+            </MenuItem>
+        </Menu>
+
+
+    </Grid>
+</Window>
