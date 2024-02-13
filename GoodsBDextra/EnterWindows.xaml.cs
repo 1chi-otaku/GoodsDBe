@@ -19,16 +19,29 @@ namespace GoodsBDextra
     public partial class EnterWindows : Window
     {
         string type;
-        public EnterWindows(string type)
+        string name;
+        bool edit;
+        public EnterWindows(bool edit = false, string type = "", string name = "")
         {
             InitializeComponent();
 
             this.type = type;
-            text.Text = "Enter new " + type + " name:";
+            this.name = name;
+            this.edit = edit;
+
+            txtName.Text = name;
+
+            if (!edit)
+                text.Text = "Enter new " + type + " name:";
+            else
+                text.Text = "Edit " + type + " name:";
+            
         }
 
         private void OKButton_Click(object sender, RoutedEventArgs e)
         {
+
+            
             if (txtName.Text.Length == 0)
             {
                 MessageBox.Show("Please enter " + type + " name!");
@@ -40,20 +53,40 @@ namespace GoodsBDextra
 
             try
             {
+               
                 connect.Open();
                 command.Connection = connect;
-                if (type == "Supplier")
+                if (edit)
                 {
-                    command.CommandText = "INSERT INTO Supplier (Name) VALUES ('" + txtName.Text + "');";
-                    SqlDataReader reader = command.ExecuteReader();
-                    reader.Close();
+                    if (type == "Supplier")
+                    {
+                        command.CommandText = $"UPDATE Supplier SET Name = '{txtName.Text}' WHERE Name = '{name}'";
+                        SqlDataReader reader = command.ExecuteReader();
+                        reader.Close();
+                    }
+                    else 
+                    {
+                        command.CommandText = $"UPDATE GoodType SET Name = '{txtName.Text}' WHERE Name = '{name}'";
+                        SqlDataReader reader = command.ExecuteReader();
+                        reader.Close();
+                    }
                 }
                 else
                 {
-                    command.CommandText = "INSERT INTO GoodType (Name) VALUES ('" + txtName.Text + "');";
-                    SqlDataReader reader = command.ExecuteReader();
-                    reader.Close();
+                    if (type == "Supplier")
+                    {
+                        command.CommandText = "INSERT INTO Supplier (Name) VALUES ('" + txtName.Text + "');";
+                        SqlDataReader reader = command.ExecuteReader();
+                        reader.Close();
+                    }
+                    else
+                    {
+                        command.CommandText = "INSERT INTO GoodType (Name) VALUES ('" + txtName.Text + "');";
+                        SqlDataReader reader = command.ExecuteReader();
+                        reader.Close();
+                    }
                 }
+               
 
             }
             catch (Exception ex)

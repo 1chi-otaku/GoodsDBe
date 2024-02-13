@@ -28,6 +28,8 @@ namespace GoodsBDextra
         {
             InitializeComponent();
 
+
+
             SqlConnection connect = new SqlConnection(@"Data Source=PECHKA\SQLEXPRESS;Initial Catalog=Storage;Integrated Security=True");
             SqlCommand command = new SqlCommand();
 
@@ -75,8 +77,6 @@ namespace GoodsBDextra
                 connect.Close();
             }
             comboBox.SelectedIndex = 0;
-
-
         }
 
           
@@ -84,17 +84,12 @@ namespace GoodsBDextra
         private void OKButton_Click(object sender, RoutedEventArgs e)
         {
             Value = comboBox.Text;
-
-
             DialogResult = true;
             Close();
         }
 
         private void CancelButton_Click(object sender, RoutedEventArgs e)
         {
-
-
-
             DialogResult = false;
             Close();
         }
